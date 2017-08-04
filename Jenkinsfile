@@ -4,8 +4,8 @@ pipeline {
             string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
         }
     environment {
-            DISABLE_AUTH = 'true'
-            DB_ENGINE    = 'sqlite'
+            FROM_EMAIL = 'cic@cleo.com'
+            ACTIVATION_URL    = 'https://cleointegration.xyz'
         }
     stages {
         stage('Build') {
