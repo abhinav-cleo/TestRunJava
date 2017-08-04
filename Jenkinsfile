@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                cd /var/jenkins_home/workspace/TestRun
-                cat Hello.java
+                sh 'cd /var/jenkins_home/workspace/TestRun'
+                sh 'cat Hello.java'
             }
         }
         stage('Test') {
