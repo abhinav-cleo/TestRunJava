@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'cd /var/jenkins_home/workspace/TestRun'
+                sh 'cd /var/jenkins_home/workspace/JenkinsTest2'
                 sh 'javac Hello.java'
                 sh 'java Hello'
                 echo 'Printing Environment Details'
