@@ -3,6 +3,10 @@ pipeline {
     parameters {
             string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
         }
+    environment {
+            DISABLE_AUTH = 'true'
+            DB_ENGINE    = 'sqlite'
+        }
     stages {
         stage('Build') {
             steps {
@@ -12,6 +16,9 @@ pipeline {
                 sh 'java Hello'
                 echo 'Printing Environment Details'
                 echo "Running ${env.BUILD_ID}"
+                echo "printing the Environment Variables"
+                sh 'printenv'
+                echo "Printing the custom parameters"
                 echo "${params.Greeting} World!"
             }
         }
