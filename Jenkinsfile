@@ -9,7 +9,7 @@ pipeline {
                 sh 'javac Hello.java'
                 sh 'java Hello'
                 echo 'Printing Environment Details'
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Running ${env}"
             }
         }
         stage('Test') {
